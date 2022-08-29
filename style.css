@@ -54,6 +54,10 @@ main {
   width: 100%;
 }
 
+.table-cont table button {
+  width: 80px;
+}
+
 td {
   padding: 10px 0;
 }

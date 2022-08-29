@@ -31,14 +31,23 @@ function Book(title, author, pages, isRead) {
   this.isRead = isRead;
 }
 
+function doesBookExist(dataTitle) {
+  if (myLibrary.some(book => book.title.toLowerCase() === dataTitle.toLowerCase())) {
+    return true;
+  }
+  return false;
+}
+
 function addBookToLibrary(e) {
   e.preventDefault()
   const dataTitle = form.querySelector('#title').value;
   const dataAuthor = form.querySelector('#author').value;
   const dataPages = form.querySelector('#pages').value;
   const dataIsRead = form.querySelector('#isRead').checked;
-  myLibrary.push(new Book(dataTitle, dataAuthor, dataPages, dataIsRead));
-  displayBooks();
+  if (!doesBookExist(dataTitle)) {
+    myLibrary.push(new Book(dataTitle, dataAuthor, dataPages, dataIsRead));
+    displayBooks();
+  }
 }
 
 function removeBook(e) {
@@ -54,3 +63,4 @@ function removeBook(e) {
 table.addEventListener('click', removeBook);
 form.addEventListener('submit', addBookToLibrary);
 displayBooks();
+//add toggle and title exist check
