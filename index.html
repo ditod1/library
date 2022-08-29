@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Library</title>
+</head>
+
+<body>
+  <header>
+    <h1>Library</h1>
+    <button>Log In</button>
+  </header>
+  <main>
+
+    <div class="data" id="data">
+      <h2>Add a book</h2>
+      <input type="text" name="title" id="title" placeholder="Title">
+      <input type="text" name="author" id="author" placeholder="Author">
+      <input type="number" name="pages" id="pages" placeholder="Pages">
+      <div class="isRead-cont">
+        <label for="isRead">Have you read the book?</label>
+        <input type="checkbox" name="isRead" id="isRead">
+      </div>
+      <button id="form-btn">Add Book</button>
+    </div>
+    <div class="table-cont">
+      <table>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Pages</th>
+        <th>Status</th>
+        <tr>
+          <td>Dune</td>
+          <td>Tolkien</td>
+          <td>200</td>
+          <td>Read</td>
+        </tr>
+      </table>
+    </div>
+  </main>
+  <footer>
+    <p>Copyright © 2022 Orlando Diaz</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
