@@ -18,28 +18,31 @@
 
     <div class="data" id="data">
       <h2>Add a book</h2>
-      <input type="text" name="title" id="title" placeholder="Title">
-      <input type="text" name="author" id="author" placeholder="Author">
-      <input type="number" name="pages" id="pages" placeholder="Pages">
-      <div class="isRead-cont">
-        <label for="isRead">Have you read the book?</label>
-        <input type="checkbox" name="isRead" id="isRead">
-      </div>
-      <button id="form-btn">Add Book</button>
+      <form action="#" id="form-data">
+        <input type="text" name="title" id="title" placeholder="Title" required>
+        <input type="text" name="author" id="author" placeholder="Author" required>
+        <input type="number" name="pages" id="pages" placeholder="Pages" required>
+        <div class="isRead-cont">
+          <label for="isRead">Have you read the book?</label>
+          <input type="checkbox" name="isRead" id="isRead">
+        </div>
+        <button type="submit" id="form-btn">Add Book</button>
+      </form>
     </div>
     <div class="table-cont">
-      <table>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Pages</th>
-        <th>Status</th>
-        <tr>
-          <td>Dune</td>
-          <td>Tolkien</td>
-          <td>200</td>
-          <td>Read</td>
-        </tr>
+      <table id="book-table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Pages</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="book-table-body">
+        </tbody>
       </table>
+      <p id="empty-library">There is currently no books, you can add one by filling the form.</p>
     </div>
   </main>
   <footer>
