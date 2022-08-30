@@ -7,15 +7,23 @@ function displayBooks() {
   table.innerHTML = '';
   let isReadDisp;
   myLibrary.forEach((book, i) => {
-    book.isRead ? isReadDisp = "Read" : isReadDisp = "Not Read";
+    if (book.isRead) {
+      isReadDisp = "Read"
+      classStatus = 'read'
+    }
+    else {
+      isReadDisp = "Not Read"
+      classStatus = 'not-read'
+    }
     table.innerHTML += `<tr id=${i}>
                           <td>${book.title}</td>
                           <td>${book.author}</td>
                           <td>${book.pages}</td>
-                          <td><button class="is-read" id="${i}">${isReadDisp}</button></td>
+                          <td><button class="read-status ${classStatus}" id="${i}">${isReadDisp}</button></td>
                           <td><button class="remove-row" id="${i}">Remove</button></td>
                         </tr>`
   });
+
   if (table.childElementCount === 0) {
     emptyDisplay.style.display = 'block';
   }
@@ -51,10 +59,11 @@ function addBookToLibrary(e) {
 }
 
 function removeBook(e) {
+  console.log(e.target.className);
   if (e.target.className == 'remove-row') {
     myLibrary.splice(e.target.id, 1);
   }
-  else if (e.target.className == 'is-read') {
+  else {
     myLibrary[e.target.id].isRead = !myLibrary[e.target.id].isRead;
   }
   displayBooks();
@@ -63,4 +72,3 @@ function removeBook(e) {
 table.addEventListener('click', removeBook);
 form.addEventListener('submit', addBookToLibrary);
 displayBooks();
-//add toggle and title exist check
